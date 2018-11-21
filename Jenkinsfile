@@ -21,7 +21,7 @@ pipeline{
  	stage ('Deploy'){
  		steps {
  			withMaven(maven: 'apache-maven-3.3.9'){
- 				bat 'mvn -f pom.xml package deploy  -Dusername=${username} -Dpassword=${password} -DmuleDeploy'
+ 				bat 'mvn -f pom.xml package deploy  -Dusername=mule-sid -Dpassword=Qwerty67 -DmuleDeploy'
  			}
  		}
  	}
