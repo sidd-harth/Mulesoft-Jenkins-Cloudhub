@@ -32,7 +32,8 @@
 						<username>${username}</username>
 						<password>${password}</password>
 						<applicationName>${project.artifactId}</applicationName>
-						<environment>${environment}</environment>
+						<environment>dev</environment>
+						<workerType>MICRO</workerType>
 					</cloudHubDeployment>
 				</configuration>
 			</plugin>
