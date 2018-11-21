@@ -6,15 +6,15 @@ pipeline{
  stages {
  	stage ('Build'){
  		steps {
- 			withMaven(maven:'mvn'){
- 				sh 'mvn -f mule-jenkins-pipeline/pom.xml clean install'
+ 			withMaven(maven: 'apache-maven-3.3.9'){
+ 				bat 'mvn -f mule-jenkins-pipeline/pom.xml clean install'
  			}
  		}
  	}
  	stage ('Deploy'){
  		steps {
- 			withMaven(maven:'mvn'){
- 				sh 'mvn -f Mulesoft-Jenkins-Cloudhub/pom.xml package deploy  -Dusername=$ANYPOINT_USR -Dpassword=$ANYPOINT_PSW -Denvironment=Development -DmuleDeploy'
+ 			withMaven(maven: 'apache-maven-3.3.9'){
+ 				bat 'mvn -f Mulesoft-Jenkins-Cloudhub/pom.xml package deploy  -Dusername=$ANYPOINT_USR -Dpassword=$ANYPOINT_PSW -Denvironment=Development -DmuleDeploy'
  			}
  		}
  	}
