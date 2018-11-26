@@ -31,7 +31,7 @@
 						<muleVersion>${app.runtime}</muleVersion>
 						<username>${username}</username>
 						<password>${password}</password>
-						<applicationName>${project.artifactId}</applicationName>
+						<applicationName>xyztjkad</applicationName>
 						<environment>Sandbox</environment>
 						<workerType>MICRO</workerType>
 					</cloudHubDeployment>
