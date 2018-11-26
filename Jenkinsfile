@@ -1,8 +1,6 @@
 pipeline{
  agent any
- environment {
-    ANYPOINT = credentials('mulesoft-anypoint-platform')
- }
+ 
  stages {
    stage('Check Parameters') {
    steps {
