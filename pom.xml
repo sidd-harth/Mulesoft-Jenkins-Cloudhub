@@ -37,7 +37,37 @@
 					</cloudHubDeployment>
 				</configuration>
 			</plugin>
-		</plugins>
+	
+		<plugin>
+       <groupId>org.apache.maven.plugins</groupId>
+       <artifactId>maven-dependency-plugin</artifactId>
+       <version>2.10</version>
+       <executions>
+          <execution>
+             <id>unpack</id>
+             <phase>generate-sources</phase>
+             <goals>
+                <goal>unpack</goal>
+             </goals>
+             <configuration>
+                <artifactItems>
+                   <artifactItem>
+                      <groupId>fd4278d3-b53f-42b6-826c-8e3445886663</groupId>
+                      <artifactId>jen</artifactId>
+                      <version>1.0.0</version>
+                      <type>zip</type>
+                      <classifier>fat-raml</classifier>
+                      <overWrite>true</overWrite>
+                      <outputDirectory>src/main/api/</outputDirectory>
+                      <includes>**/*</includes>
+                   </artifactItem>
+                </artifactItems>
+             </configuration>
+          </execution>
+       </executions>
+   </plugin>
+
+    </plugins>
 	</build>
 
 	<dependencies>
