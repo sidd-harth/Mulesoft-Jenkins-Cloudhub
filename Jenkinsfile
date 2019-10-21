@@ -19,7 +19,7 @@ pipeline{
  	stage ('Deploy'){
  		steps {
  			withMaven(maven: 'apache-maven-3.3.9'){
- 				sh 'mvn -f pom.xml package deploy  -Dusername=mule-training-sid -Dpassword=Qwerty67 -DmuleDeploy'
+ 				sh 'mvn -f pom.xml package deploy  -Dusername=mule-7 -Dpassword=Qwerty67 -DmuleDeploy'
  			}
  		}
  	}
