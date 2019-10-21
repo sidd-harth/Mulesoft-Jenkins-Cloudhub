@@ -1,6 +1,11 @@
 pipeline{
  agent any
- 
+ tools {
+        maven 'M2'
+        jdk 'JDK'
+        nodejs 'NODEJS'
+    }
+
  stages {
    stage('Check Parameters') {
    steps {
@@ -11,16 +16,16 @@ pipeline{
   }
  	stage ('Build'){
  		steps {
- 			withMaven(maven: 'apache-maven-3.3.9'){
- 				sh 'mvn -f pom.xml clean install'
- 			}
+ 		
+ 				bat 'mvn -f pom.xml clean install'
+ 		
  		}
  	}
  	stage ('Deploy'){
  		steps {
- 			withMaven(maven: 'apache-maven-3.3.9'){
- 				sh 'mvn -f pom.xml package deploy  -Dusername=mule-7 -Dpassword=Qwerty67 -DmuleDeploy'
- 			}
+ 		
+ 				bat 'mvn -f pom.xml package deploy  -Dusername=mule-7 -Dpassword=Qwerty67 -DmuleDeploy'
+ 		
  		}
  	}
  }
