@@ -1,0 +1,9 @@
+http.port: "9099"
+https.port: "19092"
+
+flight.reservations.url: "reservations"
+
+reservations.sabre.port: "9099"
+reservations.sabre.host: "localhost"
+reservations.sabre.baseuri: "pnr"
+reservations.sabre.response.timeout: "30000"
